@@ -3,40 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portafolio | Xiomara Beatriz Alan Lombardi</title>
+    <style>
+      :root {
+        --main-bg: #f7f8fa;
+        --accent: #6c63ff;
+        --text: #22223b;
+        --subtext: #4a4e69;
+        --card-bg: #fff;
+        --border: #e0e0e0;
+      }
+      html {
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        background: var(--main-bg);
+        color: var(--text);
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background: var(--accent);
+        color: #fff;
+        padding: 2rem 1rem 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(108,99,255,0.08);
+      }
+      header h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+      header h2 {
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+      }
+      section {
+        max-width: 700px;
+        margin: 2rem auto;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        padding: 2rem 1.5rem;
+        border: 1px solid var(--border);
+      }
+      section h3 {
+        color: var(--accent);
+        margin-top: 0;
+        font-size: 1.3rem;
+      }
+      #about p {
+        color: var(--subtext);
+        line-height: 1.7;
+      }
+      #skills ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin: 1.2rem 0 0 0;
+      }
+      #skills li {
+        background: #ecebff;
+        color: var(--accent);
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1rem;
+        box-shadow: 0 1px 4px rgba(108,99,255,0.07);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      footer {
+        margin-top: auto;
+        background: #23213a;
+        color: #fff;
+        text-align: center;
+        padding: 1.2rem 0 1rem 0;
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+      @media (max-width: 600px) {
+        section {
+          padding: 1.2rem 0.7rem;
+        }
+        header h1 {
+          font-size: 1.3rem;
+        }
+        header h2 {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Xiomarita</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      voluptates sapiente ex id ipsum saepe, reprehenderit libero aspernatur
-      magni nostrum odit facilis odio laudantium ab harum natus, necessitatibus
-      illum fugiat.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      voluptates sapiente ex id ipsum saepe, reprehenderit libero aspernatur
-      magni nostrum odit facilis odio laudantium ab harum natus, necessitatibus
-      illum fugiat.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      voluptates sapiente ex id ipsum saepe, reprehenderit libero aspernatur
-      magni nostrum odit facilis odio laudantium ab harum natus, necessitatibus
-      illum fugiat.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      voluptates sapiente ex id ipsum saepe, reprehenderit libero aspernatur
-      magni nostrum odit facilis odio laudantium ab harum natus, necessitatibus
-      illum fugiat.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-      voluptates sapiente ex id ipsum saepe, reprehenderit libero aspernatur
-      magni nostrum odit facilis odio laudantium ab harum natus, necessitatibus
-      illum fugiat.
-    </p>
-    <footer>FOOTER</footer>
+    <header>
+      <h1>Xiomara Beatriz Alan Lombardi</h1>
+      <h2>Desarrolladora Front End</h2>
+    </header>
+    <section id="about">
+      <h3>Sobre mí</h3>
+      <p>
+        Tengo 21 años, soy peruana y me apasiona la historia, la literatura y el
+        arte. Me encantaría viajar por el mundo para conocer cómo otras culturas
+        y civilizaciones se desarrollaron. Disfruto leer, escribir código,
+        dibujar, cocinar y también me gusta ir al gimnasio.
+      </p>
+    </section>
+    <section id="skills">
+      <h3>Habilidades</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Figma</li>
+        <li>UI/UX</li>
+      </ul>
+    </section>
+    <footer>
+      <p>© 2025 Xiomara Beatriz Alan Lombardi | Portafolio Front End</p>
+    </footer>
   </body>
 </html>
