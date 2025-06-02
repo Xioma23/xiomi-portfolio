@@ -6,25 +6,27 @@
     <title>Portafolio | Xiomara Beatriz Alan Lombardi</title>
     <style>
       :root {
-        --main-bg: #f7f8fa;
-        --accent: #6c63ff;
-        --text: #22223b;
-        --subtext: #4a4e69;
-        --card-bg: #fff;
-        --border: #e0e0e0;
+        --main-bg: #f7f6f9;
+        --accent: #7c5e99;
+        --text: #2d2233;
+        --subtext: #5e5470;
+        --card-bg: #f3eef7;
+        --border: #d6cbe1;
       }
       html {
         box-sizing: border-box;
         font-size: 18px;
       }
-      *, *:before, *:after {
+      *,
+      *:before,
+      *:after {
         box-sizing: inherit;
       }
       body {
         margin: 0;
         background: var(--main-bg);
         color: var(--text);
-        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        font-family: "Segoe UI", "Roboto", Arial, sans-serif;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -34,32 +36,81 @@
         color: #fff;
         padding: 2rem 1rem 1.5rem 1rem;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(108,99,255,0.08);
+        box-shadow: 0 2px 8px rgba(124, 94, 153, 0.08);
       }
       header h1 {
         margin: 0 0 0.5rem 0;
         font-size: 2.2rem;
         letter-spacing: 1px;
+        font-family: "Playfair Display", serif;
       }
       header h2 {
         margin: 0;
         font-weight: 400;
         font-size: 1.2rem;
         letter-spacing: 2px;
+        font-family: "Montserrat", sans-serif;
+      }
+      nav.navbar {
+        background: #ede7f6;
+        border-bottom: 1px solid var(--border);
+        padding: 0.5rem 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      nav.navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+      nav.navbar a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      nav.navbar a:hover {
+        color: #4b3862;
+        text-decoration: underline;
       }
       section {
         max-width: 700px;
         margin: 2rem auto;
         background: var(--card-bg);
         border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 12px rgba(124, 94, 153, 0.04);
         padding: 2rem 1.5rem;
         border: 1px solid var(--border);
+      }
+      section.card {
+        margin-top: 2rem;
       }
       section h3 {
         color: var(--accent);
         margin-top: 0;
         font-size: 1.3rem;
+        font-family: "Playfair Display", serif;
+      }
+      .about-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid var(--accent);
+        box-shadow: 0 2px 8px rgba(124, 94, 153, 0.1);
+        background: #fff;
+        object-fit: cover;
       }
       #about p {
         color: var(--subtext);
@@ -73,26 +124,116 @@
         gap: 1.2rem;
         margin: 1.2rem 0 0 0;
       }
-      #skills li {
-        background: #ecebff;
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1.2rem 0 0 0;
+        padding: 0;
+      }
+      #skills li,
+      .skills-list li {
+        background: #e5d8f2;
         color: var(--accent);
         padding: 0.7rem 1.2rem;
         border-radius: 8px;
         font-weight: 500;
         font-size: 1rem;
-        box-shadow: 0 1px 4px rgba(108,99,255,0.07);
+        box-shadow: 0 1px 4px rgba(124, 94, 153, 0.07);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Montserrat", sans-serif;
+        transition: background 0.2s, color 0.2s;
+        cursor: default;
+      }
+      #skills li:hover,
+      .skills-list li:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+      .timeline {
+        border-left: 3px solid var(--accent);
+        margin-left: 3rem;
+        padding-left: 2rem;
+        position: relative;
+      }
+      .timeline-item {
+        margin-bottom: 3rem;
+        position: relative;
+      }
+      .timeline-year {
+        position: absolute;
+        left: -4.5rem;
+        top: 0;
+        background: var(--accent);
+        color: #fff;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(124, 94, 153, 0.15);
+      }
+      .timeline-content {
+        background: #ede7f6;
+        border-radius: 8px;
+        padding: 1rem 1.2rem;
+        margin-left: 1rem;
+        font-size: 1rem;
+        color: var(--subtext);
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0 1px 4px rgba(124, 94, 153, 0.04);
+      }
+      .contact-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 1.2rem;
+      }
+      .contact-links a {
+        background: #e5d8f2;
+        color: var(--accent);
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        transition: background 0.2s, color 0.2s;
         display: flex;
         align-items: center;
         gap: 0.5rem;
       }
+      .contact-links a:hover {
+        background: var(--accent);
+        color: #fff;
+      }
       footer {
         margin-top: auto;
-        background: #23213a;
+        background: #5e5470;
         color: #fff;
         text-align: center;
         padding: 1.2rem 0 1rem 0;
         font-size: 1rem;
         letter-spacing: 1px;
+        font-family: "Montserrat", sans-serif;
+      }
+      @media (max-width: 800px) {
+        .about-flex {
+          flex-direction: column;
+          align-items: center;
+        }
+        .timeline {
+          margin-left: 2rem;
+          padding-left: 1.5rem;
+        }
+        .timeline-year {
+          left: -3.5rem;
+        }
       }
       @media (max-width: 600px) {
         section {
@@ -104,6 +245,12 @@
         header h2 {
           font-size: 1rem;
         }
+        .skills-list {
+          gap: 0.5rem;
+        }
+        .contact-links {
+          gap: 1rem;
+        }
       }
     </style>
   </head>
@@ -112,25 +259,107 @@
       <h1>Xiomara Beatriz Alan Lombardi</h1>
       <h2>Desarrolladora Front End</h2>
     </header>
-    <section id="about">
-      <h3>Sobre mí</h3>
-      <p>
-        Tengo 21 años, soy peruana y me apasiona la historia, la literatura y el
-        arte. Me encantaría viajar por el mundo para conocer cómo otras culturas
-        y civilizaciones se desarrollaron. Disfruto leer, escribir código,
-        dibujar, cocinar y también me gusta ir al gimnasio.
-      </p>
-    </section>
-    <section id="skills">
-      <h3>Habilidades</h3>
+    <nav class="navbar">
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Responsive Design</li>
-        <li>Figma</li>
-        <li>UI/UX</li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
+    </nav>
+    <section id="about" class="card">
+      <div class="about-flex">
+        <img
+          src="https://ui-avatars.com/api/?name=Xiomara+Beatriz+Alan+Lombardi&background=7c5e99&color=fff&size=128"
+          alt="Avatar Xiomara"
+          class="avatar"
+        />
+        <div>
+          <h3>Sobre mí</h3>
+          <p>
+            Soy Xiomara, desarrolladora front end y diseñadora gráfica peruana
+            de 21 años. Me apasiona la historia, la literatura y el arte.
+            Disfruto viajar, leer, escribir código, dibujar, cocinar y entrenar
+            en el gimnasio.<br /><br />
+            Como freelancer, he creado flyers, catálogos y logos en Figma, y he
+            desarrollado habilidades sociales como comunicación, empatía y
+            trabajo en equipo. En 2025 trabajé en Neurozett realizando
+            documentación técnica de proyectos web, usando Starlight (Astro),
+            Excalidraw y Obsidian. Tengo experiencia desplegando proyectos en
+            Render, Vercel, Netlify y gestionando Digital Gardens con Obsidian
+            Vaults.<br /><br />
+            También trabajé en atención al cliente en un call center de
+            cobranzas, fortaleciendo mis habilidades de comunicación y
+            resolución de problemas.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="card">
+      <h3>Habilidades</h3>
+      <ul class="skills-list">
+        <li title="HTML">🔤 HTML</li>
+        <li title="CSS">🎨 CSS</li>
+        <li title="JavaScript">✨ JavaScript</li>
+        <li title="Responsive Design">📱 Responsive Design</li>
+        <li title="Figma">🖌️ Figma</li>
+        <li title="UI/UX">🧩 UI/UX</li>
+        <li title="Diseño Gráfico">🖼️ Diseño Gráfico</li>
+        <li title="Comunicación">💬 Comunicación</li>
+        <li title="Empatía">🤝 Empatía</li>
+        <li title="Trabajo en equipo">👥 Trabajo en equipo</li>
+        <li title="Documentación técnica">📄 Documentación técnica</li>
+        <li title="Starlight (Astro)">🌟 Starlight (Astro)</li>
+        <li title="Excalidraw">📝 Excalidraw</li>
+        <li title="Obsidian">🗂️ Obsidian</li>
+        <li title="Despliegue">🚀 Render, Vercel, Netlify</li>
+        <li title="Digital Garden">🌱 Digital Garden</li>
+        <li title="Atención al cliente">📞 Atención al cliente</li>
+        <li title="Resolución de problemas">🧠 Resolución de problemas</li>
+      </ul>
+    </section>
+    <section id="experience" class="card">
+      <h3>Experiencia</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <strong>Neurozett</strong><br />
+            Documentación técnica de proyectos web, desarrollo y formulación.<br />
+            Herramientas: Starlight (Astro), Excalidraw, Obsidian.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">
+            <strong>Freelancer</strong><br />
+            Diseño de flyers, catálogos y logos en Figma para diversos clientes.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <strong>Call Center</strong><br />
+            Atención al cliente en cobranzas, fortaleciendo habilidades sociales
+            y de comunicación.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="card">
+      <h3>Contacto</h3>
+      <div class="contact-links">
+        <a href="mailto:xiomarita.dev@gmail.com" title="Email">📧 Email</a>
+        <a
+          href="https://www.linkedin.com/in/xiomarita"
+          target="_blank"
+          title="LinkedIn"
+          >💼 LinkedIn</a
+        >
+        <a href="https://github.com/xiomarita" target="_blank" title="GitHub"
+          >🐙 GitHub</a
+        >
+      </div>
     </section>
     <footer>
       <p>© 2025 Xiomara Beatriz Alan Lombardi | Portafolio Front End</p>
